@@ -1,0 +1,36 @@
+<!-- Extend the base html -->
+{% extends "photography/base.html" %}
+<!-- Load static path -->
+{% load static%}
+
+{% block styles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'photography/css/contact.css' %}">
+{% endblock styles%}
+
+{% block content %}
+	<main class="main-col">
+        <header class="page-title">Contact</header>
+        
+        <section class="desc">
+            <p>
+                Alternatively if you would like to send me an email directly. My email address is wb95.images@gmail.com
+            </p>
+        </section>
+        
+            <form action="https://formspree.io/wb95.images@gmail.com"
+                      method="POST">
+
+                <!-- name -->
+                <input type="text" name="name" placeholder="Name">
+
+                <!-- email address -->
+                <input type="email" name="_replyto" placeholder="Email">
+
+                <!-- Message -->
+                <textarea name="message" rows="3" placeholder="Message" style="font-family: inherit; font-size: 1em;"></textarea>
+
+                <!-- Send button -->
+                <input type="submit" value="send">
+        </form>
+    </main>
+{% endblock content %}

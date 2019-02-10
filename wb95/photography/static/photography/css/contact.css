@@ -1,0 +1,32 @@
+/* Form style */
+input, textarea, select {
+    width: 100%;
+    padding: 1em 2em;
+    margin: 1em 0;
+    display: inline-block;
+    border: solid #ffa584;
+    box-sizing: border-box;
+    
+    
+    font-size: 1em;
+    color: #6e6e6e;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    padding: 1em;
+    margin: 1em 0;
+    border: solid #ffa584;
+    cursor: pointer;
+    color: #ffa584;
+    
+    font-size: 1.5em;
+}
+
+input[type=submit]:hover {
+    background-color: #ffa584;
+    color: #6e6e6e;
+}
+/*#######################################*/

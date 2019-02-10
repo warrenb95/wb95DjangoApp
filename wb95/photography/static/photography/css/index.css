@@ -1,0 +1,110 @@
+/* background image */
+.home {
+    height: 100vh;
+    background-image: url(../images/index.jpg);
+    background-position: left;
+    background-size: cover;
+}
+
+/* GRID LAYOUT */
+.grid {
+    width: 80%;
+    
+    margin: auto;
+    margin-top: 1em;
+    
+    /* FOR IE ffs stupid browser why are you using it */
+    display: -ms-grid;
+    
+    -ms-grid-columns: auto auto;
+    -ms-grid-rows: auto auto;
+    
+    display: grid;
+    
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto; 
+    
+    grid-gap: 1em;
+}
+
+.more-text a {
+    color: #ffa584;
+}
+
+.more-text a:hover {
+    color: #6e6e6e;
+}
+
+.img {
+    height: 30em;
+    margin: auto;
+}
+
+nav {
+    background-color: transparent;
+}
+
+.page-title{
+    margin-top: 3.5em;
+}
+
+/*####################################################################*/
+
+/* Button */
+#contact-btn {
+    width: 7.5em;
+    margin: -3.75em;
+    position:relative;
+    top: 80%; 
+    left:50%;
+    
+    background-color: transparent;
+    border-color: #ffa584;
+    border-style: solid;
+    
+    color: #ffa584;
+    font-size: 2em;
+    
+    cursor: pointer;
+}
+/*####################################################################*/
+
+/* Logos */
+.logo {
+    max-width: 20em;
+    display: block;
+    margin: auto;
+}
+/*####################################################################*/
+
+/* RESPONSIVENESS */
+
+@media (max-width: 1150px){
+    
+    .grid {
+        width: 100%;
+        -ms-grid-columns: auto;
+        -ms-grid-rows: auto;
+        
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+    
+    .img {
+        height: 20em;
+    }
+    
+}
+
+@media (max-width: 750px){
+    
+    .img {
+        height: 15em;
+    }
+    
+    .about {
+        height: auto;
+    }
+    
+    
+}
