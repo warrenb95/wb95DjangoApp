@@ -5,5 +5,5 @@ from django.http import HttpResponse
 
 # Home view
 def home(request):
-	return HttpResponse("<h1>Home</h1>")
+	return HttpResponse("<h1>Landing page</h1>")
 
