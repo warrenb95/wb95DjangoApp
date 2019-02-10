@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import PostImage
 
 # Create your views here.
 def home(request):
 
 	params = {
-	"title" : "Home"
+		"title" : "Home"
 	}
 
 	return render(request, 'photography/home.html', params)
@@ -13,10 +14,14 @@ def home(request):
 
 def contact(request):
 	params = {
-	"title" : "Contact"
+		"title" : "Contact"
 	}
 	return render(request, 'photography/contact.html', params)
 
 
 def gallery(request):
-	return HttpResponse("<h1> WORK </h1>")
+	params = {
+		'title': 'Gallery',
+		'images': PostImage.objects.all()
+	}
+	return render(request, 'photography/gallery.html', params)
