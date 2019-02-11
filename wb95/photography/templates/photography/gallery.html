@@ -17,21 +17,39 @@
 {% block content %}
 	<main class="main-col">
         <section class="page-title">Gallery</section>
-        
-        <section class="grid">
 
             {% for group in gallery_groups %}
-            	
-        		{% for image in group.GalleryImage %}
-        			<a data-fancybox="{{image.image_group}}" href="{{image.image.url}}">
-	                	<img class="img" src="{{image.image.url}}" alt="{{image.alt}}">
-	            	</a>
-        		{% endfor %}
+
+            	<div class="desc">
+	                <h1>{{group.title}}</h1>
+	                
+	                <img class="icon" src="{{group.logo.url}}">
+	                
+	                <div class="clear"></div>
+
+	                <div class="show-toggle animated infinite bounce slow">
+	                    <img class="snav-icon" src="{% static 'photography/images/icons/arrow.png' %}">
+	                </div>
+
+	                <p class="more-text">
+	                    {{group.desc}}
+	                </p>
+	            </div>
+
+	            <section class="grid">
+
+	        		{% for image in gallery_images %}
+
+	        			{% if image.gallery_group.pk == group.pk %}
+			    			<a data-fancybox="{{image.image_group}}" href="{{image.image.url}}">
+			                	<img class="img" src="{{image.image.url}}" alt="{{image.alt}}">
+			            	</a>
+		            	{% endif %}
+	        		{% endfor %}
+
+        		</section>
 
             {% endfor %}
-            
-            
-        </section>
         
     </main>
 {% endblock content %}

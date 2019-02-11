@@ -3,6 +3,7 @@ from django.db import models
 class GalleryGroup(models.Model):
 	title = models.CharField(max_length=100)
 	logo = models.ImageField(upload_to='images')
+	desc = models.TextField()
 
 	def __str__(self):
 		return self.title

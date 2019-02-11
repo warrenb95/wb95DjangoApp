@@ -133,6 +133,7 @@ a, button, img {
 .page-title {
     text-align: center;
     font-size: 4em;
+    margin-top: 2em;
 }
 
 .bottom {
