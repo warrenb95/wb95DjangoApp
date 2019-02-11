@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import PostImage
+from .models import GalleryGroup
 
 # Create your views here.
 def home(request):
@@ -22,6 +22,6 @@ def contact(request):
 def gallery(request):
 	params = {
 		'title': 'Gallery',
-		'images': PostImage.objects.all()
+		'gallery_groups': GalleryGroup.objects.all()
 	}
 	return render(request, 'photography/gallery.html', params)

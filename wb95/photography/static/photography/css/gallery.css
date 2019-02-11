@@ -3,6 +3,7 @@
     width: 75%;
     
     margin: auto;
+    margin-top: 1.5em;
     
     /* FOR IE ffs stupid browser why are you using it */
     display: -ms-grid;

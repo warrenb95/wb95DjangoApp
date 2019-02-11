@@ -1,4 +1,5 @@
 from django.contrib import admin
-from .models import PostImage
+from .models import GalleryImage, GalleryGroup
 
-admin.site.register(PostImage)
+admin.site.register(GalleryGroup)
+admin.site.register(GalleryImage)

@@ -1,16 +1,16 @@
 <!-- Extend the base html -->
 {% extends "photography/base.html" %}
 <!-- Load static path -->
-{% load static%}
+{% load static %}
 
 {% block styles %}
 	<link rel="stylesheet" type="text/css" href="{% static 'photography/css/gallery.css' %}">
 	<!-- FANCY BOX LINKS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js"></script>	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />	
 {% endblock styles %}
 
 {% block scripts %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js"></script>
 	<script src="{% static 'photography/js/gallery.js' %}"></script>
 {% endblock scripts %}
 
@@ -19,12 +19,14 @@
         <section class="page-title">Gallery</section>
         
         <section class="grid">
-            
-            {% for image in images %}
+
+            {% for group in gallery_groups %}
             	
-        		<a data-fancybox="{{image.image_group}}" href="{{image.url}}">
-	                <img class="img" src="{{image.path}}" alt="{{image.alt}}">
-	            </a>
+        		{% for image in group.GalleryImage %}
+        			<a data-fancybox="{{image.image_group}}" href="{{image.image.url}}">
+	                	<img class="img" src="{{image.image.url}}" alt="{{image.alt}}">
+	            	</a>
+        		{% endfor %}
 
             {% endfor %}
             
