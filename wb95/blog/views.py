@@ -1,5 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import BlogPost, PostComment
 
 def photography(request):
-	return HttpResponse('<h1> Blog - photography </h1>')
+
+	params = {
+		"title" : "Photography Blog",
+		"blog_posts" : BlogPost.objects.all()
+	}
+
+	return render(request, 'blog/photographyBlog.html', params)

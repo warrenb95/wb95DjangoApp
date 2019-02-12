@@ -1,0 +1,60 @@
+ /*GRID LAYOUT */
+.grid {
+    width: 75%;
+    
+    margin: auto;
+    margin-top: 1.5em;
+    
+    /* FOR IE ffs stupid browser why are you using it */
+    display: -ms-grid;
+    
+    -ms-grid-columns: auto auto auto;
+    -ms-grid-rows: auto auto auto;
+    
+    display: grid;
+    
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto; 
+    
+    grid-gap: 1em;
+}
+
+/*####################################################*/
+
+/* PAGE STYLE */
+
+.blog_box {
+    text-align: center;
+    border: solid;
+    border-color: #ffa584;
+}
+
+/*####################################################*/
+
+/* RESPONSIVENESS */
+
+@media (max-width: 1150px){
+    
+    .grid {
+        width: 90%;
+        -ms-grid-columns: auto auto;
+        -ms-grid-rows: auto auto;
+        
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+    
+}
+
+@media (max-width: 750px){
+    
+    .grid {
+        width: 100%;
+        -ms-grid-columns: auto;
+        -ms-grid-rows: auto;
+        
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+}
+/*####################################################
