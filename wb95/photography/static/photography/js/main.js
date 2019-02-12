@@ -41,10 +41,6 @@ $(document).ready(function(){
         } else {
              $("nav").removeClass("sticky");
         }
-        
-        if($("footer").hasClass("bottom")){
-            $("footer").removeClass("bottom");
-        }
     });
     
     /* Down arrow */
@@ -62,7 +58,7 @@ $(document).ready(function(){
         $(this).fadeIn(500);
     });
     
-    if ($(window).width() < 500 || $(window).height() < 800) {
+    if ( $(window).height() > 100 ) {
        if($("footer").hasClass("bottom")){
             $("footer").removeClass("bottom");
         }
