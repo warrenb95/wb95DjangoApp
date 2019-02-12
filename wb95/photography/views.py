@@ -20,6 +20,7 @@ def contact(request):
 
 
 def gallery(request):
+
 	params = {
 		'title': 'Gallery',
 		'gallery_groups': GalleryGroup.objects.all(),
