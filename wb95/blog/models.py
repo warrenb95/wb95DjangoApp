@@ -2,13 +2,17 @@ from django.db import models
 
 class BlogPost(models.Model):
 	title = models.CharField(max_length=100)
-	post = models.TextField()
+	slug = models.CharField(max_length=100)
 
 	def __str__(self):
 		return self.title
 
-	def snippet(self):
-		return self.post[:75]
+
+class PostSection(models.Model):
+	post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
+	text1 = models.TextField()
+	image = models.ImageField(upload_to='images/blog/photography', blank=True, null=True)
+	text2 = models.TextField()
 
 
 class PostComment(models.Model):

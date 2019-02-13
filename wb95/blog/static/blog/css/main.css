@@ -29,6 +29,14 @@
     border-color: #ffa584;
 }
 
+.grid a {
+    color: #ffa584;
+    text-decoration: none;
+}
+
+.grid a:hover {
+    color: #6e6e6e;
+}
 /*####################################################*/
 
 /* RESPONSIVENESS */
