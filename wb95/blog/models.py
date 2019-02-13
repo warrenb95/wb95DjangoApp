@@ -12,7 +12,7 @@ class PostSection(models.Model):
 	post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
 	text1 = models.TextField()
 	image = models.ImageField(upload_to='images/blog/photography', blank=True, null=True)
-	text2 = models.TextField()
+	text2 = models.TextField(blank=True, null=True)
 
 
 class PostComment(models.Model):
