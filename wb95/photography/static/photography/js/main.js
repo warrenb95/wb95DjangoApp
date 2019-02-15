@@ -58,8 +58,12 @@ $(document).ready(function(){
         $(this).fadeIn(500);
     });
     
-    if ( $(window).height() > 100 ) {
-       if($("footer").hasClass("bottom")){
+    if ( $(document).height() > $(window).height() + $("footer").height() ) {
+       if( $("footer").hasClass("bottom") ){
+            $("footer").removeClass("bottom");
+        }
+    } else if ($(window).height() < 700){
+        if( $("footer").hasClass("bottom") ){
             $("footer").removeClass("bottom");
         }
     }

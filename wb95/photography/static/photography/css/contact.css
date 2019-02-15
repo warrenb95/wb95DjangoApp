@@ -29,4 +29,8 @@ input[type=submit]:hover {
     background-color: #ffa584;
     color: #6e6e6e;
 }
+
+form {
+    margin: auto 1em;
+}
 /*#######################################*/

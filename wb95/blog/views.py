@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import BlogPost, PostSection, PostComment
+from .models import BlogPost
 
 def photography(request):
 
@@ -18,7 +18,7 @@ def photographyPost(request, post_slug):
 
 	params = {
 		'title': blogPost.title,
-		'sections': PostSection.objects.filter(post = blogPost.id)
+		'sections': blogPost.section.all()
 	}
 
 	return render(request, 'blog/photographyDetail.html', params)

@@ -4,13 +4,14 @@
 {% load static%}
 
 {% block styles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/detail.css' %}">
 {% endblock styles %}
 
 {% block scripts %}
 {% endblock scripts %}
 
 {% block content %}
-	<main class="main-col">
+	<main>
 
 		<section class="page-title">{{title}}</section>
 
@@ -24,7 +25,7 @@
 		                {% endif %}
 
 		                {% if sect.image %}
-		                	<p>{{sect.image}}</p>
+		                	<img class="img" src="{{sect.image.url}}">
 		                {% endif %}
 
 		                {% if sect.text2 %}

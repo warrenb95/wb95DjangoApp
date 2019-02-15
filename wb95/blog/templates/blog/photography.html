@@ -15,12 +15,26 @@
 		<section class="grid">
 
 			{% for post in blog_posts %}
-				<div class="blog_box">
-		                <h2><a href="{% url 'photography-post' post.slug %}">{{post.title}}</a></h2>
+				
+				<div class="post_container">
+					<div class="image_container">
 
-		                <p>{{post.snippet}}</p>
+        				<img src="{{post.image.url}}">
 
-		            </div>
+					</div>
+
+					<div class="text_container">
+						<div class="post_title">
+							<a href="{% url 'photography-post' post.slug %}">
+	                			<h2>{{post.title}}</h2>
+	    					</a>
+
+							<p>{{post.date_posted|date:"D, M - Y"}}</p>
+						</div>
+
+						<p>{{post.section.first.text1|slice:":250"}} <a href="{% url 'photography-post' post.slug %}">Read more...</a></p>
+					</div>
+	            </div>
 			{% endfor %}
 
 		</section>

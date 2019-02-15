@@ -38,13 +38,10 @@
 
 	            <section class="grid">
 
-	        		{% for image in gallery_images %}
-
-	        			{% if image.gallery_group.pk == group.pk %}
-			    			<a data-fancybox="{{image.image_group}}" href="{{image.image.url}}">
-			                	<img class="img" src="{{image.image.url}}" alt="{{image.alt}}">
-			            	</a>
-		            	{% endif %}
+	        		{% for gallery_image in group.gallery_image.all %}
+	        			<a data-fancybox="{{gallery_image.image_group}}" href="{{gallery_image.image.url}}">
+		                	<img class="img" src="{{gallery_image.image.url}}" alt="{{gallery_image.alt}}">
+		            	</a>
 	        		{% endfor %}
 
         		</section>
