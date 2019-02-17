@@ -6,7 +6,7 @@ def photography(request):
 
 	params = {
 		'title' : 'Photography Blog',
-		'blog_posts' : BlogPost.objects.all()
+		'blog_posts' : BlogPost.objects.all().order_by('-date_posted')
 	}
 
 	return render(request, 'blog/photography.html', params)
