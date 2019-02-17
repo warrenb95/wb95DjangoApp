@@ -17,7 +17,7 @@ def photographyPost(request, post_slug):
 	blogPost = BlogPost.objects.get(slug = post_slug)
 
 	params = {
-		'title': blogPost.title,
+		'post': blogPost,
 		'sections': blogPost.section.all()
 	}
 

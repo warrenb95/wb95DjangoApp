@@ -13,23 +13,39 @@
 {% block content %}
 	<main>
 
-		<section class="page-title">{{title}}</section>
+		<section class="page-title">{{post.title}}</section>
+
+		<section class="grid">
+			
+			<div class="main_image_container">
+				<img src="{{post.image.url}}" >
+			</div>
+
+			<div class="desc desc_container">{{post.description}}</div>
+
+		</section>
 
 		<section>
 
 			{% for sect in sections %}
-				<div class="blog_box">
+				<div>
 
 		                {% if sect.text1 %}
-		                	<p>{{sect.text1}}</p>
+		                	<div class="text_container">
+		                		<p>{{sect.text1}}</p>
+		                	</div>
 		                {% endif %}
 
 		                {% if sect.image %}
-		                	<img class="img" src="{{sect.image.url}}">
+		                	<div class="image_container">
+		                		<img src="{{sect.image.url}}">
+		                	</div>
 		                {% endif %}
 
 		                {% if sect.text2 %}
-		                	<p>{{sect.text2}}</p>
+		                	<div class="text_container">
+		                		<p>{{sect.text2}}</p>
+		                	</div>
 		                {% endif %}
 
 		            </div>

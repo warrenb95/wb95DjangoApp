@@ -1,6 +1,6 @@
  /*GRID LAYOUT */
 .grid {
-    width: 75%;
+    width: 100%;
     
     margin: auto;
     margin-top: 1.5em;
@@ -8,18 +8,56 @@
     /* FOR IE ffs stupid browser why are you using it */
     display: -ms-grid;
     
-    -ms-grid-columns: 70% 30%;
+    -ms-grid-columns: 50% 50%;
     
     display: grid;
     
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 50% 50%;
     
     grid-gap: 1em;
 }
-
 /*####################################################*/
 
-.img {
-	width: 50%;
-	margin: auto;
+/* PAGE ITEM STYLE */
+.main_image_container img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    align-content: center;
+    max-height: 30em;
 }
+
+.image_container img {
+    display: block;
+    width: 75%;
+    object-fit: cover;
+    overflow: hidden;
+    margin: auto;
+    max-height: 25em;
+}
+
+.desc_container {
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+.text_container {
+    padding: 1em;
+    font-size: 1.25em;
+    text-align: center;
+}
+/*####################################################*/
+
+/* RESPONSIVENESS */
+
+@media (max-width: 700px){
+    
+    .grid {
+        -ms-grid-columns: auto;
+        
+        grid-template-columns: auto;
+    }
+    
+}
+/*####################################################
