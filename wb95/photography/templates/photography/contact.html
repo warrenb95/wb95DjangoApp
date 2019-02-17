@@ -8,8 +8,8 @@
 {% endblock styles%}
 
 {% block content %}
-	<main class="main-col">
-        <header class="page-title">Contact</header>
+	<main>
+        <header class="page-title">{{title}}</header>
         
         <section class="desc">
             <p>
@@ -17,20 +17,20 @@
             </p>
         </section>
         
-            <form action="https://formspree.io/wb95.images@gmail.com"
-                      method="POST">
+        <form action="https://formspree.io/wb95.images@gmail.com"
+                  method="POST">
 
-                <!-- name -->
-                <input type="text" name="name" placeholder="Name">
+            <!-- name -->
+            <input type="text" name="name" placeholder="Name">
 
-                <!-- email address -->
-                <input type="email" name="_replyto" placeholder="Email">
+            <!-- email address -->
+            <input type="email" name="_replyto" placeholder="Email">
 
-                <!-- Message -->
-                <textarea name="message" rows="3" placeholder="Message" style="font-family: inherit; font-size: 1em;"></textarea>
+            <!-- Message -->
+            <textarea name="message" rows="4" placeholder="Message" style="font-family: inherit; font-size: 1em;"></textarea>
 
-                <!-- Send button -->
-                <input type="submit" value="send">
+            <!-- Send button -->
+            <input type="submit" value="send">
         </form>
     </main>
 {% endblock content %}

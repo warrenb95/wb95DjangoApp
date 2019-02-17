@@ -16,7 +16,7 @@
 
 {% block content %}
 	<main class="main-col">
-        <section class="page-title">Gallery</section>
+        <section class="page-title">{{title}}</section>
 
             {% for group in gallery_groups %}
 
@@ -38,14 +38,11 @@
 
 	            <section class="grid">
 
-	        		{% for image in gallery_images %}
+	        		{% for gallery_image in group.gallery_image.all %}
+	        			<a data-fancybox="{{gallery_image.image_group}}" href="{{gallery_image.image.url}}">
+		                	<img class="img" src="{{gallery_image.image.url}}" alt="{{gallery_image.alt}}">
+		            	</a>
 
-	        			{% if image.gallery_group.pk == group.pk %}
-			    			<a data-fancybox="{{image.image_group}}" href="{{image.image.url}}">
-			                	<img class="img" src="{{image.image.url}}" alt="{{image.alt}}">
-			            	</a>
-		            	{% endif %}
-		            	
 	        		{% endfor %}
 
         		</section>

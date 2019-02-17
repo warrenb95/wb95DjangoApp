@@ -37,7 +37,7 @@
 
 .img {
     height: 30em;
-    margin: auto;
+    margin-top: 1em;
 }
 
 nav {
@@ -45,7 +45,7 @@ nav {
 }
 
 .page-title{
-    margin-top: 3.5em;
+    margin-top: 2.75em;
 }
 
 /*####################################################################*/
@@ -54,7 +54,7 @@ nav {
 #contact-btn {
     width: 7.5em;
     margin: -3.75em;
-    position:relative;
+    position: relative;
     top: 80%; 
     left:50%;
     
@@ -82,7 +82,7 @@ nav {
 @media (max-width: 1150px){
     
     .grid {
-        width: 100%;
+        width: 90%;
         -ms-grid-columns: auto;
         -ms-grid-rows: auto;
         
@@ -92,6 +92,7 @@ nav {
     
     .img {
         height: 20em;
+        margin: 2em;
     }
     
 }

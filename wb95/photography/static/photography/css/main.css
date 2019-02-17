@@ -8,6 +8,10 @@ html {
     background-color: #f5f5f5;
 }
 
+body {
+    margin: 0;
+}
+
 footer {
     left: 0;
     right: 0;
@@ -46,9 +50,6 @@ nav li a {
     padding-right: 1em;
     margin: auto;
     text-decoration: none;
-}
-
-.socials {
 }
 
 .drop-socials{
@@ -124,7 +125,7 @@ a, button, img {
 
 /* PAGE LAYOUT */
 
-.main-col {
+main {
     width: 70%;
     margin: auto;
     margin-top: 6em;
@@ -132,8 +133,8 @@ a, button, img {
 
 .page-title {
     text-align: center;
-    font-size: 4em;
-    margin-top: 2em;
+    font-size: 3em;
+    margin-top: 2.5em;
 }
 
 .bottom {
@@ -146,22 +147,20 @@ a, button, img {
 /* Page style */
 .desc {
     text-align: center;
-    margin: 1.5em 0;
+    margin: 2em;
     border-bottom: solid;
     border-bottom-color: #ffa584;
     border-top: solid;
     border-top-color: #ffa584;
-    padding: 1em 0;
 }
 
 .desc h1 {
-    font-size: 2.5em;
-    font-weight: normal;
-    margin: 0;
+    font-size: 2em;
 }
 
 .desc p {
-    font-size: 1.25em;
+    font-size: 1em;
+    margin-top: 1em;
 }
 
 .show-toggle {
@@ -183,10 +182,6 @@ a, button, img {
 
 .more-text {
     display: block;
-}
-
-.grid {
-    margin-top: 2em;
 }
 
 .rotate {
@@ -223,7 +218,7 @@ button:focus {
 
 /* RESPONSIVENESS */
 @media (max-width: 1350px){
-    .main-col {
+    main {
         width: 90%;
     }
 }
@@ -251,9 +246,6 @@ button:focus {
     /*####################################*/
     
     /* PAGE LAYOUT */
-    main {
-        width: 100%;
-    }
     
     .show-toggle {
         display: inline-block;

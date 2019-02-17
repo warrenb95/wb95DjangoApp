@@ -1,0 +1,79 @@
+ /*GRID LAYOUT */
+.grid {
+    width: 100%;
+    
+    margin: auto;
+    margin-top: 1.5em;
+    
+    /* FOR IE ffs stupid browser why are you using it */
+    display: -ms-grid;
+    
+    -ms-grid-columns: auto;
+    
+    display: grid;
+    
+    grid-template-columns: auto;
+    
+    grid-gap: 1em;
+}
+
+/*####################################################*/
+
+/* PAGE STYLE */
+
+.post_container {
+    text-align: center;
+    border: solid;
+    border-color: #ffa584;
+    width: 90%;
+    max-width: 50em;
+    margin: auto;
+}
+
+.post_container:hover{
+    box-shadow: 0 0 1em hsla(0, 0%, 43%, 0.75);
+}
+
+.text_container{
+    margin: 0 0.5em;
+}
+
+.post_title {
+    display: flex;
+    align-items: center;
+}
+
+.post_title p {
+    margin-left: .5em;
+}
+
+.image_container img {
+    width: 100%;
+    height: 15em;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.post_container a, .image_container a {
+    color: #ffa584;
+    text-decoration: none;
+}
+
+.post_container > a:hover, .image_container > a {
+    color: #6e6e6e;
+}
+
+/*####################################################*/
+
+/* RESPONSIVENESS */
+
+@media (max-width: 700px){
+    
+    .grid {
+        -ms-grid-columns: auto;
+        
+        grid-template-columns: auto;
+    }
+    
+}
+/*####################################################

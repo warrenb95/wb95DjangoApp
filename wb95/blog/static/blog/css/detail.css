@@ -1,0 +1,25 @@
+ /*GRID LAYOUT */
+.grid {
+    width: 75%;
+    
+    margin: auto;
+    margin-top: 1.5em;
+    
+    /* FOR IE ffs stupid browser why are you using it */
+    display: -ms-grid;
+    
+    -ms-grid-columns: 70% 30%;
+    
+    display: grid;
+    
+    grid-template-columns: 70% 30%;
+    
+    grid-gap: 1em;
+}
+
+/*####################################################*/
+
+.img {
+	width: 50%;
+	margin: auto;
+}

@@ -1,0 +1,41 @@
+<!-- Extend the base html -->
+{% extends "photography/base.html" %}
+<!-- Load static path -->
+{% load static%}
+
+{% block styles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/detail.css' %}">
+{% endblock styles %}
+
+{% block scripts %}
+{% endblock scripts %}
+
+{% block content %}
+	<main>
+
+		<section class="page-title">{{title}}</section>
+
+		<section>
+
+			{% for sect in sections %}
+				<div class="blog_box">
+
+		                {% if sect.text1 %}
+		                	<p>{{sect.text1}}</p>
+		                {% endif %}
+
+		                {% if sect.image %}
+		                	<img class="img" src="{{sect.image.url}}">
+		                {% endif %}
+
+		                {% if sect.text2 %}
+		                	<p>{{sect.text2}}</p>
+		                {% endif %}
+
+		            </div>
+			{% endfor %}
+
+		</section>
+
+	</main>
+{% endblock content %}
