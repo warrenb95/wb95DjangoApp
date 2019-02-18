@@ -10,12 +10,11 @@ class GalleryGroup(models.Model):
 
 
 class GalleryImage(models.Model):
-	title = models.CharField(max_length=100)
+	gallery_group = models.ForeignKey(GalleryGroup, on_delete=models.CASCADE, related_name='gallery_image')
 	image_group = models.CharField(max_length=50)
 	alt = models.CharField(max_length=100)
 	image = models.ImageField(upload_to='images/gallery')
-	gallery_group = models.ForeignKey(GalleryGroup, on_delete=models.CASCADE, related_name='gallery_image')
 
 	def __str__(self):
-		return self.title
+		return self.gallery_group.title
 

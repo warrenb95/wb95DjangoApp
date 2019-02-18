@@ -20,12 +20,3 @@ class PostSection(models.Model):
 
 	def __str__(self):
 		return self.post.title
-
-
-class PostComment(models.Model):
-	author = models.CharField(max_length=100)
-	comment = models.TextField()
-	post = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='comment')
-
-	def __str__(self):
-		return self.post.title
