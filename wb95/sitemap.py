@@ -6,10 +6,10 @@ class StaticSitemap(Sitemap):
 
     def items(self):
         return [
-            'photography:photography-home',
-            'photography:photography-contact',
-            'photography:photography-gallery',
-            'blog:blog-photography'
+            'photography:home',
+            'photography:contact',
+            'photography:gallery',
+            'blog:photography'
         ]
 
     def location(self, item):
@@ -22,4 +22,4 @@ class BlogSitemap(Sitemap):
         return BlogPost.objects.all()
 
     def location(self, item):
-        return reverse('blog:photography-post', args=[item.slug])
+        return reverse('blog:post', args=[item.slug])
