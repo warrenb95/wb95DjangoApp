@@ -5,7 +5,9 @@
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="wb95 is the official creative website of photographer, Warren Brown. This is the home page of wb95.">
+        <meta name="description" content="{{meta_desc}}">
+
+        {% block meta %}{% endblock %}
         
         {% if title %}
             <title>WB95 - {{title}}</title>
