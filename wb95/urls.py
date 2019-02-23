@@ -32,6 +32,8 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
+    path(r'^google757ca71000e59a05\.html$', lambda r: HttpResponse("google-site-verification: google757ca71000e59a05.html", mimetype="text/plain")),
+    path(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: ", mimetype="text/plain")),
 ]
 
 if settings.DEBUG:
