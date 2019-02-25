@@ -19,7 +19,7 @@ class PostSection(models.Model):
 	text2 = models.TextField(blank=True, null=True)
 
 	def __str__(self):
-		return self.post.title
+		return self.post.title + ' - PK: ' + str(self.pk)
 
 
 class Comment(models.Model):
@@ -28,4 +28,4 @@ class Comment(models.Model):
 	comment = models.TextField()
 
 	def __str__(self):
-		return self.post.title
+		return self.post.title + ' - Author: ' + self.author

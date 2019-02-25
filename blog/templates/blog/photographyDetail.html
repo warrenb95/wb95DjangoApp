@@ -4,6 +4,7 @@
 {% load static%}
 
 {% block styles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'photography/css/contact.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/detail.css' %}">
 {% endblock styles %}
 
@@ -33,30 +34,54 @@
 
 		<section>
 
-			{% for sect in sections %}
+			{% for section in post.section.all %}
 				<div>
 
-		                {% if sect.text1 %}
-		                	<div class="text_container">
-		                		<p>{{sect.text1}}</p>
-		                	</div>
-		                {% endif %}
+	                {% if section.text1 %}
+	                	<div class="text_container">
+	                		<p>{{section.text1}}</p>
+	                	</div>
+	                {% endif %}
 
-		                {% if sect.image %}
-		                	<div class="image_container">
-		                		<img src="{{sect.image.url}}">
-		                	</div>
-		                {% endif %}
+	                {% if section.image %}
+	                	<div class="image_container">
+	                		<img src="{{section.image.url}}">
+	                	</div>
+	                {% endif %}
 
-		                {% if sect.text2 %}
-		                	<div class="text_container">
-		                		<p>{{sect.text2}}</p>
-		                	</div>
-		                {% endif %}
+	                {% if section.text2 %}
+	                	<div class="text_container">
+	                		<p>{{section.text2}}</p>
+	                	</div>
+	                {% endif %}
 
-		            </div>
+	            </div>
 			{% endfor %}
 
+		</section>
+
+		<section class="desc">
+			<h2>Leave a comment</h2>
+			<form id="form" action="{% url 'blog:post' post.slug %}" method="post">
+				{% csrf_token %}
+				{{form}}
+				<input type="submit" value="Submit Comment">
+			</form>
+		</section>
+
+		<section class="desc">
+			<h2>Comments</h2>
+			{% if post.comment.all %}
+				{% for comment in post.comment.all %}
+					<div id={{comment.pk}} class="comment">
+						<h3>{{comment.author}}</h3>
+
+						<p>{{comment.comment}}</p>
+					</div>
+				{% endfor %}
+			{% else %}
+				<h3>There are no comments. Feel free to add one :)</h3>
+			{% endif %}
 		</section>
 
 	</main>

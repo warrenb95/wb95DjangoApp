@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import BlogPost
+from .forms import Comment
 
 def photography(request):
 
@@ -17,11 +18,23 @@ def photographyPost(request, post_slug):
 
 	blogPost = BlogPost.objects.get(slug = post_slug)
 
-	comments = blogPost.comment.all()
+	if request.method == 'POST':
+		form = Comment(request.POST)
+
+		if form.is_valid():
+			com = form.save(commit=False)
+			com.post_id = blogPost.pk
+			com.save()
+
+			return redirect('blog:post', blogPost.slug)
+
+	else:
+		form = Comment()
 
 	params = {
 		'post': blogPost,
-		'sections': blogPost.section.all(),
+		'title': blogPost.title,
+		'form': form,
 		'meta_desc' : "wb95 blog post."
 	}
 

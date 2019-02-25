@@ -47,6 +47,18 @@
     font-size: 1.25em;
     text-align: center;
 }
+
+.form_style {
+    font-family: 'Roboto', sans-serif;
+}
+
+.comment {
+    width: auto;
+    margin: 1em;
+    margin-top: 2em;
+    text-align: left;
+}
+
 /*####################################################*/
 
 /* RESPONSIVENESS */
