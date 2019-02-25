@@ -133,8 +133,14 @@ main {
 
 .page-title {
     text-align: center;
-    font-size: 3em;
-    margin-top: 2.5em;
+    font-size: 2em;
+    margin-top: 3em;
+}
+
+.page-title h1{
+    font-weight: lighter;
+    margin: auto;
+    margin-top: 3em;
 }
 /*####################################################################*/
 

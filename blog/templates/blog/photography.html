@@ -10,7 +10,9 @@
 {% block content %}
 	<main class="main-col">
 
-		<section class="page-title">{{title}}</section>
+		<section class="page-title">
+			<h1>{{title}}</h1>
+		</section>
 
 		<section class="grid">
 
@@ -25,14 +27,14 @@
 
 					<div class="text_container">
 						<div class="post_title">
-							<a href="{% url 'photography-post' post.slug %}">
+							<a href="{% url 'blog:post' post.slug %}">
 	                			<h2>{{post.title}}</h2>
 	    					</a>
 
 							<p>{{post.date_posted|date:"D, M - Y"}}</p>
 						</div>
 
-						<p>{{post.section.first.text1|slice:":250"}} <a href="{% url 'photography-post' post.slug %}">Read more...</a></p>
+						<p>{{post.section.first.text1|slice:":250"}} <a href="{% url 'blog:post' post.slug %}">Read more...</a></p>
 					</div>
 	            </div>
 			{% endfor %}
