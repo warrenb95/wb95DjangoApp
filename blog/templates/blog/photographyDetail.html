@@ -69,11 +69,11 @@
 			</form>
 		</section>
 
-		<section class="desc">
+		<section id=comments class="desc">
 			<h2>Comments</h2>
 			{% if post.comment.all %}
 				{% for comment in post.comment.all %}
-					<div id={{comment.pk}} class="comment">
+					<div class="comment">
 						<h3>{{comment.author}}</h3>
 
 						<p>{{comment.comment}}</p>
