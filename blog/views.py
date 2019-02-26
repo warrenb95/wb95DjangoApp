@@ -49,7 +49,7 @@ def photographyPost(request, post_slug):
 						subject,
 						message,
 						'wb95.developer@gmail.com',
-						['zetuba@mail-hub.info'],
+						['wb95.images@gmail.com'],
 						fail_silently = False
 					)
 				except BadHeaderError:
