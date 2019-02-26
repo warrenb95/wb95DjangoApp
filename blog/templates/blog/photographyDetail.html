@@ -75,36 +75,40 @@
 			{% if post.comment.all %}
 				{% for comment in post.comment.all %}
 					{% if not comment.reply %}
-						<div class="comment">
-							<h3>{{comment.author}}</h3>
+						<div class="comment_wrapper">
+							<div class="comment">
+								<h3>{{comment.author}}</h3>
 
-							<p>{{comment.comment}}</p>
+								<p>{{comment.comment}}</p>
 
+							</div>
+
+							
+							{% endif %}
+
+							{% for reply in comment.replies.all %}
+								<div class="reply">
+									<h3>{{reply.author}}</h3>
+
+									<p>{{reply.comment}}</p>
+								</div>
+
+								
+							{% endfor %}
+
+							{% if not comment.reply %}
+								<div class="clear"></div>
+								<button class="reply_btn">Reply</button>
+								<form class="reply" action="{% url 'blog:post' post.slug %}" method="post">
+									<input type="hidden" name="comment_id" value="{{comment.pk}}">
+									{% csrf_token %}
+									{{form}}
+									<input type="submit" value="Reply">
+								</form>
+								<div class="clear"></div>
+							{% endif %}
+					
 						</div>
-
-						
-					{% endif %}
-
-					{% for reply in comment.replies.all %}
-						<div class="reply">
-							<h3>{{reply.author}}</h3>
-
-							<p>{{reply.comment}}</p>
-						</div>
-
-						
-					{% endfor %}
-
-					{% if not comment.reply %}
-						<button class="reply_btn">Reply</button>
-						<form class="reply" action="{% url 'blog:post' post.slug %}" method="post">
-							<input type="hidden" name="comment_id" value="{{comment.pk}}">
-							{% csrf_token %}
-							{{form}}
-							<input type="submit" value="Reply">
-						</form>
-					{% endif %}
-
 				{% endfor %}
 			{% else %}
 				<h3>There are no comments. Feel free to add one :)</h3>

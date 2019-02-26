@@ -1,7 +1,9 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import BlogPost, Comment
+from django.shortcuts import render, redirect, reverse
+from django.core.mail import BadHeaderError, send_mail
+
+from .models import BlogPost
 from .forms import CommentForm
+
 
 def photography(request):
 
@@ -29,11 +31,29 @@ def photographyPost(request, post_slug):
 
 			reply_id = request.POST.get('comment_id')
 
+			# Email notification
+			subject = com.post.title +' - Author: '+com.author
+			message = com.comment + ' '+'https://www.wb95.co.uk/blog/photography/'+ blogPost.slug
+
 			if reply_id:
 				comment_qs = blogPost.comment.get(id=reply_id)
+				subject += ' - Reply to: ' + comment_qs.author
 
 			com.reply = comment_qs
 			com.save()
+
+			# Send Email
+			if subject and message:
+				try:
+					send_mail(
+						subject,
+						message,
+						'wb95.developer@gmail.com',
+						['zetuba@mail-hub.info'],
+						fail_silently = False
+					)
+				except BadHeaderError:
+					print('BadHeaderError')
 
 			return redirect('blog:post', blogPost.slug)
 

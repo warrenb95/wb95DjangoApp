@@ -52,11 +52,18 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.comment_wrapper {
+    width: 80%;
+    border-left-style: solid;
+    border-left-color: #ffa584;
+
+    margin: 2em 0;
+}
+
 .comment {
     display: block;
     width: auto;
     margin: 1em;
-    margin-top: 2em;
     text-align: left;
     clear: both;
 }
@@ -69,7 +76,11 @@
     display: block;
     text-align: left;
     margin-left: 3em;
+    padding-left: 1em;
     clear: both;
+
+    border-left-style: solid;
+    border-left-color: #ffa584;
 }
 
 .reply p {
@@ -85,20 +96,25 @@
     display: none;
 }
 
+.clear {
+    clear: both;
+}
+
 /*####################################################*/
 
 /* Button */
 .reply_btn {
-    width: 90%;
+    width: 5em;
+    height: 1.25em;
     background-color: transparent;
     border-color: #ffa584;
     border-style: solid;
     color: #ffa584;
     font-size: 2em;
 
-    margin: 0 1em;
+    float: left;
 
-    left: 0;
+    margin: 0 1em;
     
     cursor: pointer;
 }
@@ -122,6 +138,10 @@
     #comments form {
         width: 90%;
         margin: auto;
+    }
+
+    .comment_wrapper {
+        width: 100%;
     }
     
 }
