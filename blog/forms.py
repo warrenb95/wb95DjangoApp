@@ -8,7 +8,7 @@ class CommentForm(forms.ModelForm):
 		fields = ['author', 'comment']
 		widgets = {
 			'author':forms.TextInput(attrs = {'placeholder' : 'Your Name'}),
-			'comment':forms.Textarea(attrs = {'placeholder' : 'Your Comment or Reply', 'rows' : 5, 'class' : 'form_style' }),
+			'comment':forms.Textarea(attrs = {'placeholder' : 'Your Comment', 'rows' : 5, 'class' : 'form_style' }),
 		}
 		labels = {
 			'author' : (''),
