@@ -30,11 +30,11 @@
 
 .image_container img {
     display: block;
-    width: 75%;
+    max-width: 75%;
     object-fit: cover;
     overflow: hidden;
     margin: auto;
-    max-height: 25em;
+    max-height: 80vh;
 }
 
 .desc_container {
