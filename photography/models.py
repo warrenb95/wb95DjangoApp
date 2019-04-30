@@ -5,7 +5,7 @@ class GalleryGroup(models.Model):
 	order = models.IntegerField(null=False)
 	logo = models.ImageField(upload_to='images/logos')
 	desc = models.TextField()
-	video = models.FileField(upload_to='videos/',blank=True, null=True)
+	video = models.TextField(blank=True, null=True)
 
 	def __str__(self):
 		return self.title

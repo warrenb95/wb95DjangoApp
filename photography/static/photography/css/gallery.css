@@ -31,8 +31,9 @@
 
 /* video */
 
-video {
-    width: 75%;
+iframe {
+    max-width: 75%;
+    
 }
 
 /*####################################################*/
@@ -63,7 +64,7 @@ video {
         grid-template-rows: auto;
     }
 
-    video {
-        width: 100%;
+    iframe {
+        max-width: 100%;
     }
 }

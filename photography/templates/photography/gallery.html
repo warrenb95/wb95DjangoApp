@@ -40,10 +40,7 @@
                 <br>
 
                 {% if group.video %}
-                	<video controls>
-                		<source src="{{group.video.url}}" type="video/mp4">
-            			Your browser does not support the video tag.
-                	</video>
+                    <iframe width="560" height="315" src="{{group.video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 {% endif %}
 
             </div>
