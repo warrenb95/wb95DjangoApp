@@ -20,36 +20,46 @@
         	<h1>{{title}}</h1>
         </section>
 
-            {% for group in gallery_groups %}
+        {% for group in gallery_groups %}
 
-            	<div class="desc">
-	                <h1>{{group.title}}</h1>
-	                
-	                <img class="icon" src="{{group.logo.url}}">
-	                
-	                <div class="clear"></div>
+        	<div class="desc">
+                <h1>{{group.title}}</h1>
+                
+                <img class="icon" src="{{group.logo.url}}">
+                
+                <div class="clear"></div>
 
-	                <div class="show-toggle animated infinite bounce slow">
-	                    <img class="snav-icon" src="{% static 'photography/images/icons/arrow.png' %}">
-	                </div>
+                <div class="show-toggle animated infinite bounce slow">
+                    <img class="snav-icon" src="{% static 'photography/images/icons/arrow.png' %}">
+                </div>
 
-	                <p class="more-text">
-	                    {{group.desc}}
-	                </p>
-	            </div>
+                <p class="more-text">
+                    {{group.desc}}
+                </p>
 
-	            <section class="grid">
+                <br>
 
-	        		{% for gallery_image in group.gallery_image.all %}
-	        			<a data-fancybox="{{gallery_image.image_group}}" href="{{gallery_image.image.url}}">
-		                	<img class="img" src="{{gallery_image.image.url}}" alt="{{gallery_image.alt}}">
-		            	</a>
+                {% if group.video %}
+                	<video controls>
+                		<source src="{{group.video.url}}" type="video/mp4">
+            			Your browser does not support the video tag.
+                	</video>
+                {% endif %}
 
-	        		{% endfor %}
+            </div>
 
-        		</section>
+            <section class="grid">
 
-            {% endfor %}
+        		{% for gallery_image in group.gallery_image.all %}
+        			<a data-fancybox="{{gallery_image.image_group}}" href="{{gallery_image.image.url}}">
+	                	<img class="img" src="{{gallery_image.image.url}}" alt="{{gallery_image.alt}}">
+	            	</a>
+
+        		{% endfor %}
+
+    		</section>
+
+        {% endfor %}
         
     </main>
 {% endblock content %}

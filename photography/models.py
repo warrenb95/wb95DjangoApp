@@ -2,8 +2,10 @@ from django.db import models
 
 class GalleryGroup(models.Model):
 	title = models.CharField(max_length=100)
+	order = models.IntegerField(null=False)
 	logo = models.ImageField(upload_to='images/logos')
 	desc = models.TextField()
+	video = models.FileField(upload_to='videos/',blank=True, null=True)
 
 	def __str__(self):
 		return self.title

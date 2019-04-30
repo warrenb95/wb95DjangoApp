@@ -25,7 +25,7 @@ def gallery(request):
 
 	params = {
 		'title': 'Gallery',
-		'gallery_groups': GalleryGroup.objects.all(),
+		'gallery_groups': GalleryGroup.objects.all().order_by('order'),
 		"meta_desc" : "This is the gallery of wb95. Displaying a selction of images taken by wb95."
 	}
 	return render(request, 'photography/gallery.html', params)
