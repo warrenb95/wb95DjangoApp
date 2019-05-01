@@ -118,13 +118,15 @@ nav {
         grid-template-rows: auto;
     }
 
-    .icon-grid {
+    .logo-grid {
         width: 90%;
         -ms-grid-columns: auto auto;
         -ms-grid-rows: auto auto;
         
         grid-template-columns: auto auto;
         grid-template-rows: auto auto;
+
+        grid-gap: 2em;
     }
     
     .img {
@@ -133,7 +135,7 @@ nav {
     }
 
     .client-logo {
-        width: 15em;
+        width: 10em;
     }
     
 }
@@ -148,4 +150,14 @@ nav {
         height: auto;
     }
     
+    .logo-grid {
+        width: 90%;
+        -ms-grid-columns: auto;
+        -ms-grid-rows: auto;
+        
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+
+        grid-gap: 2em;
+    }
 }
