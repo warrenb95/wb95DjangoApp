@@ -126,8 +126,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'wb95.developer@gmail.com'
-EMAIL_HOST_PASSWORD = os.environ['DEV_EMAIL_PASSWORD']
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 465
+# EMAIL_USE_SSL = True
+# EMAIL_HOST_USER = 'wb95.developer@gmail.com'
+# EMAIL_HOST_PASSWORD = os.environ['DEV_EMAIL_PASSWORD']
