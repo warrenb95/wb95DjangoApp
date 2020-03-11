@@ -1,9 +1,40 @@
-# wb95DjangoApp
+# wb95DjangoApp - Full stack Django website.
+Simple Django site that was used as a portfolio website as well as blog for related topics.
 
-This Git repo is a personal project of mine. The project is a photography 
-website used to share images as well as blog posts. The website also features
-a contact page and links to various other sites.
+## Technologies
+* python3
+* django
+* sqlite3
 
-The site is developed with Django and sqlite3.
+## Getting Started
+### Prerequisites
+Requires python3
 
-To run on a new machine you need to migrate the database and create the super user.
+### Installing
+Create a virtualenv (Optional)
+
+Install the dependancies
+```
+> pip install -r requirements.txt
+```
+
+Migrate the database
+```
+> python manage.py makemigrations
+```
+
+Perform the migration
+```
+> python manage.py migrate
+```
+
+Create super user to add things to database (Optional)
+```
+> python manage.py createsuperuser
+```
+
+##Run the app
+```
+> python manage.py runserver
+```
+
